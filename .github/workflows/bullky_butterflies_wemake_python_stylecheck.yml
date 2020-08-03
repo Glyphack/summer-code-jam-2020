@@ -13,16 +13,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      max-parallel: 4
-      matrix:
-        python-version: [3.8]
-
     steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+          python-version: '3.8'
     - name: wemake-python-styleguide
       uses: wemake-services/wemake-python-styleguide@0.14.1
-      with:
-        reporter: 'github-pr-review'
-      env:
-        GITHUB_TOKEN: ${{ secrets.github_token }}
