@@ -33,3 +33,10 @@ jobs:
     - name: Run Tests
       run: |
         pipenv run python manage.py test
+    - name: Python Django Coverage GitHub Action
+      uses: dc740/django-coveragepy-github-action@0.9
+      with:
+        # Application
+        django-app: 'messenger'
+        # Minimum allowed code coverage
+        minimum-coverage: 10
