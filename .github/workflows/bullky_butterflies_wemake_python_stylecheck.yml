@@ -1,4 +1,4 @@
-name: wemake python stylecheck
+name: wemake-python-stylecheck
 
 defaults:
   run:
